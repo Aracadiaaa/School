@@ -108,9 +108,9 @@ startBtn.addEventListener("click", () => {
 });
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-const prevScrollpos = window.pageYOffset;
+const prevScrollpos = window.scrollY;
 window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
+  var currentScrollPos = window.scrollY;
   if (prevScrollpos >= currentScrollPos) {
     document.getElementById("navbar").style.bottom = "0px";
   } else {

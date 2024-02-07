@@ -1,4 +1,4 @@
-body {
+body:not(.navbar, .thing, .active, .header-container, .header1, .header2) {
     font-family: 'Krona One', sans-serif;
     margin: 0;
     padding: 0;
@@ -7,14 +7,16 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
-header {
+header:not(.headerText) {
     text-align: center;
     padding: 20px;
     background-color: #8B4744;
     color: #ffffff;
     width: 100%;
+    margin-top: 1%;
 }
 
 .profile-container {
@@ -36,6 +38,13 @@ header {
 .school-id {
     color: #000000;
     font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.username {
+    color: #000000;
+    font-size: 1.8em;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -80,24 +89,167 @@ footer {
     width: 100%;
 }
 
-.navbar-container {
-    background-color: #E5E4E0;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.navbar-section {
-    flex: 1;
-    text-align: center;
-}
-
 .navbar a {
     color: white;
     text-decoration: none;
+}
+
+.navbar {
+    background-color: #B7B5AB;
+    border-radius: 15px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 7.5%;
+    width: 85%;
+    height: 8%;
+    column-gap: 20;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    -webkit-transition: all 0.8s ease;
+}
+  
+  /* Style the links inside the navigation bar */
+.navbar a {
+    width: 15%;
+    height: 30%;
+    border-radius: 15px;
+    color: black;
+    background-color: #E7E7E7;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+    background-color: #EE4E7C;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+    background-color: #990300;
+    color: white;
+}
+
+.header-container {
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    width: 100%;
+    font-family: 'Krona One', sans-serif;
+  }
+
+.header1 {
+display: inline-block;
+padding-right: 2%;
+}
+
+.header2 {
+display: inline-block;
+}
+
+.headerText {
+    font-size: 32px;
+}
+
+.logo {
+width: 60px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+
+/* CSS */
+.button-45 {
+  align-items: center;
+  background-color: #FFE7E7;
+  background-position: 0 0;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #D33A2C;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 33.4929px;
+  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+  padding: 2px 12px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.button-45:active,
+.button-45:hover,
+.button-45:focus {
+  outline: 0;
+}
+
+/* CSS */
+.button-45 {
+  align-items: center;
+  background-color: #FFE7E7;
+  background-position: 0 0;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #D33A2C;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 33.4929px;
+  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+  padding: 2px 12px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.button-45:active,
+.button-45:hover,
+.button-45:focus {
+  outline: 0;
+}
+
+
+.button-45:active {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.button-45:hover {
+  background-color: #FFE3E3;
+  border-color: #FAA4A4;
+}
+
+.button-45:active:hover{
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
 }

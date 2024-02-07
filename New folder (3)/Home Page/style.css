@@ -1,6 +1,7 @@
 body {
     transition: background-color 0.5s ease;
     margin: 2%;
+    font-family: 'Krona One', sans-serif;
 }
 
 .item {
@@ -36,13 +37,15 @@ body {
     display: inline-block;
 }
 
-header {
-    font-size: 32px;
-}
 
 .logo{
     width: 60px;
 }
+
+header {
+    font-size: 32px;
+}
+
 
 .navbar {
     background-color: #B7B5AB;
@@ -50,14 +53,19 @@ header {
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    width: 98%;
+    left: 7.5%;
+    width: 85%;
+    height: 8%;
     column-gap: 20;
+    display: flex;
     justify-content: space-around;
+    align-items: center;
   }
   
   /* Style the links inside the navigation bar */
 .navbar a {
-    float: left;
+    width: 15%;
+    height: 30%;
     border-radius: 15px;
     color: black;
     background-color: #E7E7E7;
@@ -65,7 +73,7 @@ header {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    justify-content: space-around;
+    overflow:inherit;
 }
 
 /* Change the color of links on hover */
@@ -80,13 +88,68 @@ header {
     color: white;
 }
 
-.todo{
+.todo-calendar-container {
+    display: flex;
+    height: 90%;
+    width: 100%;
+}
+
+
+
+.calendar{ 
     margin-top: 2%;
     border-radius: 30px;
-    width: 50%;
     background: #B85E5A;
     display: block;
-    height: 42%;
+    height: 72%;
+    flex-grow: 1;
+}
+
+.calendar td:not(.empty){
+    background-color: #b33d37c2;
+    text-align: left;
+    padding-left: 5px;
+    padding-bottom: 21px;
+}
+
+.calendar td:not(.empty):hover{
+    background-color: #99030083;
+    text-align: left;
+    padding-left: 5px;
+    padding-bottom: 21px;
+}
+
+.calendar td:not(.empty):active{
+    background-color: #990300;
+    text-align: left;
+    padding-left: 5px;
+    padding-bottom: 21px;
+}
+
+
+.month-container {
+    position: absolute;
+    border-radius: 20px;
+    right: 21%;
+    top: 16%;
+    background-color: #AD2525;
+    color: #FFF2FA;
+    padding: 0 2% 0 2%;
+}
+
+.month-container > h1 {
+    font-family: 'Krona One', sans-serif;
+}
+
+.todo{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 4%;
+    border-radius: 30px;
+    width: 40%;
+    background: #B85E5A;
+    display: block;
+    height: 72%;
     overflow: auto;
 }
 
@@ -129,6 +192,7 @@ ul li {
 }
 
 .point {
+    margin-top: 1%;
     background: #D29291;
     width: 10%;
     height: 5%;
@@ -245,11 +309,48 @@ ul li {
     z-index: 10;
 }
 
-li > button {
+.closeBtn {
     display: inline-block;
     float: right;
     border-radius: 20px;
+    border: none;
     z-index: 10;
-    min-height: 7%;
-    min-width: 4%;
+    margin-top: 10px;
+    margin-right: 5px;
 }
+
+/* CSS */
+.closeBtn {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  outline: 0;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.closeBtn:active,
+.closeBtn:hover {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.closeBtn:active {
+  opacity: .5;
+}
+

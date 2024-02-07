@@ -141,7 +141,7 @@ function unequipBackground(itemId) {
 }
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-const prevScrollpos = window.scrollY;
+const prevScrollpos = 0;
 window.onscroll = function() {
     var currentScrollPos = window.scrollY;
     if (prevScrollpos >= currentScrollPos) {
@@ -150,4 +150,8 @@ window.onscroll = function() {
         document.getElementById("navbar").style.bottom = "-65px";
     }
     prevScrollpos = currentScrollPos;
+}
+
+function openLink() {
+    window.open("/New folder (3)/Login/Login.html")
 }

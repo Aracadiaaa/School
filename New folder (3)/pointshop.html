@@ -139,7 +139,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            -webkit-transition: all 0.8s ease;
+            -webkit-transition: all 0.5s ease;
         }
         
         /* Style the links inside the navigation bar */
@@ -167,10 +167,74 @@
             color: white;
         }
 
+        .header-container {
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2%;
+            width: 100%;
+            font-family: 'Krona One', sans-serif;
+          }
+        
+        .header1 {
+        display: inline-block;
+        padding-right: 2%;
+        }
+        
+        .header2 {
+        display: inline-block;
+        }
+        
+        header {
+        font-size: 32px;
+        }
+        
+        .logo {
+        width: 60px;
+        }
         
     </style>
 </head>
 <body>
+    <style>
+        .header-container {
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2%;
+            width: 100%;
+            font-family: 'Krona One', sans-serif;
+          }
+        
+        .header1 {
+        display: inline-block;
+        padding-right: 2%;
+        }
+        
+        .header2 {
+        display: inline-block;
+        }
+        
+        header {
+        font-size: 32px;
+        }
+        
+        .logo {
+        width: 60px;
+        }
+    </style>
+
+    <div class="header-container">
+        <div class="header1">
+            <header>Cardinal Tracker</header>
+        </div>
+        <div class="header2">
+            <img src="/New folder (3)/Home Page/logo.png" alt="logo" class="logo">
+        </div>
+    </div>
+
     <div id="points-display">
         <p>Your Points: <span id="user-points">50</span></p>
     </div>
@@ -274,10 +338,10 @@
     <hr style="width: 80%; margin-top: 20px; margin-bottom: 20px;">
 
     <div class="navbar" id="navbar">
-        <a href="/Home Page/home.html">Home</a>
-        <a href="/pointshop.html" class="active">Point Shop</a>
-        <a href="/Pomodoro Page/Pomodoro.html">Pomodoro</a>
-        <a href="/user.html">User</a>
+        <a href="/New folder (3)/Home Page/home.html">Home</a>
+        <a href="/New folder (3)/pointshop.html" class="active">Point Shop</a>
+        <a href="/New folder (3)/Pomodoro Page/Pomodoro.html">Pomodoro</a>
+        <a href="/New folder (3)/userpage.html">User</a>
     </div>
 
     <script src="script.js"></script>
