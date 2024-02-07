@@ -1,0 +1,227 @@
+*:not(.navbar, .thing, .active) {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+*:not(.navbar, .thing, .active),
+*:before:not(.navbar, .thing, .active),
+*:after:not(.navbar, .thing, .active){
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body:not(.navbar, .thing, .active) {
+  background-color: #cd202d;
+  display:flex;
+  align-items: center;
+
+}
+  
+  #Header {
+      height: 50px;
+      font-size: 30px;
+      color: black;
+      margin-top: 13px;
+      text-align: center;
+      padding-left: 30%;
+  
+      
+  }
+  
+  
+  #btn-arrow {
+      
+      font-size: 30px;
+      background-color: transparent;
+      
+      
+  }
+  
+  
+  .arrow{
+      
+      width: 10%;
+      padding-left: 20px;
+      font-size: 30px;
+  
+  }
+  
+  
+  
+  .logo{
+      width: 100px;
+      padding-top: 10px;
+  }
+  
+  .ToDocontainer{
+      width: 40%;
+      min-width: 450px;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 90%;
+      padding: 30px 40px;
+  }
+  
+  
+  .Pomocontainer {
+    background-color: rgba(212, 41, 53, 0.9);
+    height:400px;
+    width: min(50%, 500px);
+    position: absolute;
+    transform: translate(-30%, -30%);
+    top: 40%;
+    margin: auto;
+    left: 20%;
+    right: 0;
+    padding: 3.5em 2em;
+    border-radius: 0.5em;
+  }
+  
+  
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .section-container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+  }
+  .btn {
+    padding: 0.6em 1em;
+    border-radius: 0.5em;
+    background-color: #3e3f43;
+    color: #ffffff;
+  }
+  .btn-focus {
+    background-color: #cb202d;
+    color: #ffffff;
+  }
+  .time-btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5em;
+  }
+  #time {
+    text-align: center;
+    color: #ffffff;
+    font-size: 5em;
+    font-weight: 600;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+  #btn-start,
+  #btn-pause {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #790811;
+    margin-top: 30px;
+    color: #ffffff;
+  }
+  #btn-reset {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #790811;
+    font-size: 2em;
+    margin-top: 30px;
+  }
+  .hide {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  
+  
+  
+  
+  #newtask{
+      position: relative;
+      background-color: #ffffff;
+      padding: 30px 20px;
+      border-radius: 5px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+  #newtask input{
+      width: 70%;
+      width: 70%;
+      height: 45px;
+      font-family: 'Poppins',sans-serif;
+      font-size: 15px;
+      border: 2px solid #DCC9CA;
+      padding: 12px;
+      color: #111111;
+      font-weight: 500;
+      position: relative;
+      border-radius: 5px;
+  }
+  #newtask input:focus{
+      outline: none;
+      border-color: #790811;
+  }
+  
+  #newtask button{
+      position: relative;
+      float: right;
+      width: 20%;
+      height: 45px;
+      border-radius: 5px;
+      font-family: 'Poppins',sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      background-color: #790811;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      outline: none;
+  }
+  #tasks{
+      background-color: #ffffff;
+      padding: 30px 20px;
+      margin-top: 60px;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      width: 100%;
+      position: relative;
+  }
+  .task{
+      background-color: #ffffff;
+      height: 50px;
+      padding: 5px 10px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #d1d3d4;
+      cursor: pointer;
+  }
+  .task span{
+      font-family: 'Poppins',sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+  }
+  .task button{
+      background-color: #790811;
+      color: #ffffff;
+      height: 100%;
+      width: 40px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+  }
+  .completed{
+      text-decoration: line-through;
+  }

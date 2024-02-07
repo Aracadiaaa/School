@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardinal Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Krona One' rel='stylesheet'>
+    <style>
+        header {
+            font-family: 'Krona One'
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="header1">
+            <header>Cardinal Tracker</header>
+        </div>
+        <div class="header2">
+            <img src="logo.png" alt="logo" class="logo">
+        </div>
+    </div>
+    <div class="point">
+        <a href="/pointshop.html" id="points" onload="getPoints();"> points</a>
+    </div>
+    <div class="todo">
+        <p class="todo-title">TO DO</p>
+        <div class="todo-container">
+            <ul class="todo-list" id="list">
+            </ul>
+        </div>
+        <button onclick="showPopup()" class="addtask">+</button>
+    </div>
+    <div class="calendar">
+        
+        <ul>
+            <li>Physics Homework</li>
+            <li>CSS151L Prototype</li>
+            <li>ITS112L Exercise</li>
+            <li>Coursera</li>
+            <li>ITS161L Review</li>
+        </ul>
+        <button onclick="addToDo()">+</button>
+    </div>
+    
+
+
+    <div class="navbar">
+        <a href="/Home Page/home.html" class="active">Home</a>
+        <a href="pointshop.html">Point Shop</a>
+        <a href="/Pomodoro Page/Pomodoro.html">Pomodoro</a>
+        <a href="/user.html">User</a>
+    </div>
+
+    <div class="popup" id="popup">
+        <form onsubmit="addToDo(); return false" id="myForm">
+            <label for="task">Task: </label>
+            <input type="text" id="inputTask">
+        </form>
+        <button onclick="addToDo()">add</button>
+    </div>
+
+    <div class="popup-bg" id="popup-bg" onclick="closePopup()"></div>
+    
+
+</body>
+<script src="Hscript.js"></script>
+</html>

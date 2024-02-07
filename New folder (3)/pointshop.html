@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point Shop</title>
+    <link href='https://fonts.googleapis.com/css?family=Krona One' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Krona One', sans-serif;
+            background-color: #E5E4E0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Change 'height' to 'min-height' */
+        }
+
+        h1 {
+            color: #000000;
+            font-family: 'Krona One';
+        }
+
+        #points-display {
+            background-color: #E3AFAF;
+            border-radius: 5px;
+            padding: 10px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1001;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .item-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .item.item-1 {
+            background-color: #ffcccc; 
+        }
+
+        .item.item-2 {
+            background-color: #ccffcc; 
+        }
+
+        .item.item-3 {
+            background-color: #ccccff; 
+        }
+
+        .item.item-4 {
+            background-color: #bae1ff; 
+        }
+
+        .item.item-5 {
+            background-color: #ffffba; 
+        }
+
+        .item.item-6 {
+            background-color: #ead1dc; 
+        }
+
+        .item button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .button-container button {
+            display: none;
+        }
+
+        .button-container button.active {
+            display: block;
+        }
+
+        .notepad-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffce72;
+            border: 1px solid #ccc;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .notepad-header {
+            cursor: move;
+            padding: 10px;
+            background-color: #ccc;
+            color: #333;
+            border-bottom: 1px solid #999;
+            user-select: none; /* Prevent text selection while dragging */
+        }
+
+        .navbar {
+            background-color: #B7B5AB;
+            border-radius: 15px;
+            overflow: hidden;
+            position:fixed;
+            bottom: 0;
+            left: 7.5%;
+            width: 85%;
+            height: 8%;
+            column-gap: 20;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            -webkit-transition: all 0.8s ease;
+        }
+        
+        /* Style the links inside the navigation bar */
+        .navbar a {
+            width: 15%;
+            height: 30%;
+            border-radius: 15px;
+            color: black;
+            background-color: #E7E7E7;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .navbar a:hover {
+            background-color: #EE4E7C;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .navbar a.active {
+            background-color: #990300;
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="points-display">
+        <p>Your Points: <span id="user-points">50</span></p>
+    </div>
+        <!-- Lines above and below the heading -->
+        <hr style="width: 80%; margin-top: 20px; margin-bottom: 20px;">
+
+        <h1 style="background-color: #E3AFAF; padding: 10px;">Welcome to the Point Shop</h1>
+
+    
+        <!-- Lines above and below the heading -->
+        <hr style="width: 80%; margin-top: 20px; margin-bottom: 20px;">
+    
+
+    <!-- Notepad pop-up container -->
+    <div id="notepadPopup" class="notepad-popup">
+        <div id="notepadPopup-header" class="notepad-header">
+            Notepad
+            <button onclick="closeNotepad()">Close</button>
+        </div>
+        <div class="notepad-content">
+            <textarea id="notepadTextarea" placeholder="Start typing..."></textarea>
+        </div>
+    </div>
+
+    <!-- Add a new item for the Notepad in your Category 3 or create a new category -->
+    <div class="category">
+        <h2>New in the Shop</h2>
+        <div class="item-container">
+            <div class="item item-notepad" data-cost="20">
+                <img src="notepad.jpg" alt="Notepad" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px;">
+                <h3>Notepad</h3>
+                <p>Cost: 20 points</p>
+                <button onclick="buyItem(20, this)">Buy</button>
+                <button onclick="openNotepad()">Use</button>
+            </div>
+
+            <div class="item item-background" id="item-4" data-cost="15" data-image-url="corgi.jpg">
+                <img src="corgi.jpg" alt="Sticker" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px;">
+                <h3>Corgi Background</h3>
+                <p>Cost: 15 points</p>
+                <button onclick="buyItem(15, this)">Buy</button>
+                <button onclick="equipBackground('item-4')">Equip</button>
+                <button onclick="unequipBackground('item-4')">Unequip</button>
+            </div>
+            
+            <div class="item item-background" id="item-5" data-cost="20" data-image-url="bee.jpg">
+                <img src="bee.jpg" alt="Background" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px;">
+                <h3>Bee Background</h3>
+                <p>Cost: 20 points</p>
+                <button onclick="buyItem(20, this)">Buy</button>
+                <button onclick="equipBackground('item-5')">Equip</button>
+                <button onclick="unequipBackground('item-5')">Unequip</button>
+            </div>
+            
+            
+
+            <div class="item item-6" data-cost="15">
+                <h3>Item 3</h3>
+                <p>Cost: 15 points</p>
+                <button onclick="buyItem(15, this)">Buy</button>
+                <button onclick="equipColor('item-6')">Equip</button>
+                <button onclick="unequipColor()">Unequip</button>
+            </div>
+            <!-- Add more items in Category 3 as needed -->
+        </div>
+    </div>
+    
+
+    <hr style="width: 80%; margin-top: 20px; margin-bottom: 20px;">
+
+    <div class="category">
+        <h2>Cute Plain Wallpapers</h2>
+        <div class="item-container">
+            <div class="item item-1" data-cost="10">
+                <h3>Pastel Pink</h3>
+                <p>Cost: 10 points</p>
+                <button onclick="buyItem(10, this)">Buy</button>
+                <button onclick="equipColor('item-1')">Equip</button>
+                <button onclick="unequipColor()">Unequip</button>
+            </div>
+
+            <!-- Add another item in Category 1 -->
+            <div class="item item-2" data-cost="15">
+                <h3>Pastel Green</h3>
+                <p>Cost: 15 points</p>
+                <button onclick="buyItem(15, this)">Buy</button>
+                <button onclick="equipColor('item-2')">Equip</button>
+                <button onclick="unequipColor()">Unequip</button>
+            </div>
+
+            <div class="item item-3" data-cost="15">
+                <h3>Lavender</h3>
+                <p>Cost: 15 points</p>
+                <button onclick="buyItem(15, this)">Buy</button>
+                <button onclick="equipColor('item-3')">Equip</button>
+                <button onclick="unequipColor()">Unequip</button>
+            </div>    
+        </div>
+    </div>
+
+    <hr style="width: 80%; margin-top: 20px; margin-bottom: 20px;">
+
+    <div class="navbar" id="navbar">
+        <a href="/Home Page/home.html">Home</a>
+        <a href="/pointshop.html" class="active">Point Shop</a>
+        <a href="/Pomodoro Page/Pomodoro.html">Pomodoro</a>
+        <a href="/user.html">User</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
