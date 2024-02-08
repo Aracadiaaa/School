@@ -20,6 +20,7 @@ function closePopup(){
     document.getElementById("popup").style.pointerEvents = "none";
     document.getElementById("popup-bg").style.opacity = "0%";
     document.getElementById("popup-bg").style.pointerEvents = "none";
+    closeStreak();
 }
 
 function addToDo(){
@@ -38,18 +39,19 @@ function addToDo(){
     closeBtn.className = "closeBtn"
     closeBtn.innerText = "X";
     closeBtn.onclick = function() {
-        closeBtn.parentElement.style.display = "none";
+        li.style.display = "none";
+        closeBtn.style.display = "none";
     }
-    li.appendChild(closeBtn);
+    ul.appendChild(closeBtn);
 
     ul.appendChild(li);
     closePopup();
 }
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-const prevScrollpos = window.pageYOffset;
+const prevScrollpos = window.scrollY;
 window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
+  var currentScrollPos = window.scrollY;
   if (prevScrollpos >= currentScrollPos) {
     document.getElementById("navbar").style.bottom = "0px";
   } else {

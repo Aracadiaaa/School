@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -20,39 +21,96 @@
             <header>Cardinal Tracker</header>
         </div>
         <div class="header2">
-            <img src="logo.png" alt="logo" class="logo">
+            <img src="./logo.png" alt="logo" class="logo">
         </div>
     </div>
     <div class="point">
-        <a href="/pointshop.html" id="points" onload="getPoints();"> points</a>
+        <a href="/New folder (3)/pointshop.html" id="points" onload="getPoints();"> points</a>
     </div>
-    <div class="todo">
-        <p class="todo-title">TO DO</p>
-        <div class="todo-container">
-            <ul class="todo-list" id="list">
-            </ul>
-        </div>
-        <button onclick="showPopup()" class="addtask">+</button>
-    </div>
-    <div class="calendar">
-        
-        <ul>
-            <li>Physics Homework</li>
-            <li>CSS151L Prototype</li>
-            <li>ITS112L Exercise</li>
-            <li>Coursera</li>
-            <li>ITS161L Review</li>
-        </ul>
-        <button onclick="addToDo()">+</button>
-    </div>
-    
 
+    <div class="todo-calendar-container">
+        <div class="todo">
+            <p class="todo-title">TO DO</p>
+            <div class="todo-container">
+                <ul class="todo-list" id="list">
+                </ul>
+            </div>
+            <button onclick="showPopup()" class="addtask">+</button>
+        </div>
+        </head>
+
+        <div class="calendar">
+            <div class="month-container">
+                <h1 class="month">February</h1>
+            </div>
+            <table align="center" cellspacing="21" cellpadding="21">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <div class="navbar">
-        <a href="/Home Page/home.html" class="active">Home</a>
-        <a href="pointshop.html">Point Shop</a>
-        <a href="/Pomodoro Page/Pomodoro.html">Pomodoro</a>
-        <a href="/user.html">User</a>
+        <a href="/New folder (3)/Home Page/home.html" class="active">Home</a>
+        <a href="/New folder (3)/pointshop.html">Point Shop</a>
+        <a href="/New folder (3)/Pomodoro Page/Pomodoro.html">Pomodoro</a>
+        <a href="/New folder (3)/userpage.html">User</a>
     </div>
 
     <div class="popup" id="popup">
@@ -62,10 +120,11 @@
         </form>
         <button onclick="addToDo()">add</button>
     </div>
-
     <div class="popup-bg" id="popup-bg" onclick="closePopup()"></div>
-    
+
 
 </body>
 <script src="Hscript.js"></script>
+<script scr="calendar.js"></script>
+
 </html>
